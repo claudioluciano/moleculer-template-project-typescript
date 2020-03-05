@@ -36,6 +36,48 @@
 				"--inspect-brk",
 				"--nolazy"
 			]
-		}
+		},
+		{
+			"name": "Debug Jest Tests",
+			"type": "node",
+			"request": "launch",
+			"runtimeArgs": [
+			  "--inspect-brk",
+			  "${workspaceRoot}/node_modules/.bin/jest",
+			  "--verbose",
+			  "--runInBand",
+			  "--bail"
+			],
+			"envFile": "${workspaceFolder}/.env.test",
+			"console": "integratedTerminal",
+			"internalConsoleOptions": "neverOpen",
+			"port": 9229,
+			"skipFiles": [
+			  "<node_internals>/**"
+			]
+		  },
+		  {
+			"name": "Run selected Jest test",
+			"type": "node",
+			"request": "launch",
+			"runtimeArgs": [
+			  "--inspect-brk",
+			  "${workspaceRoot}/node_modules/.bin/jest",
+			  "-i",
+			  "${relativeFile}",
+			  "-t",
+			  "${selectedText}",
+			  "--verbose",
+			  "--runInBand",
+			  "--bail"
+			],
+			"envFile": "${workspaceFolder}/.env.test",
+			"console": "integratedTerminal",
+			"internalConsoleOptions": "neverOpen",
+			"port": 9229,
+			"skipFiles": [
+			  "<node_internals>/**"
+			]
+		  },
 	]
 }
