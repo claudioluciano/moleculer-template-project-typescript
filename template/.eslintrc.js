@@ -7,7 +7,8 @@ module.exports = {
     'standard-with-typescript',
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jest/recommended"
   ],
   globals: {
     Atomics: 'readonly',
