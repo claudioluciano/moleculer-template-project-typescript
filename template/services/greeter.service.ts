@@ -1,59 +1,59 @@
-"use strict";
-import { ServiceSchema } from "moleculer";
+'use strict'
+import { ServiceSchema } from 'moleculer'
 
 const GreeterService: ServiceSchema = {
-	name: "greeter",
+  name: 'greeter',
 
-	/**
-	 * Service settings
-	 */
-	settings: {
+  /**
+  * Service settings
+  */
+  settings: {
 
-	},
+  },
 
-	/**
-	 * Service dependencies
-	 */
-	dependencies: [],
+  /**
+  * Service dependencies
+  */
+  dependencies: [],
 
-	/**
-	 * Actions
-	 */
-	actions: {
+  /**
+  * Actions
+  */
+  actions: {
 
-		/**
-		 * Say a 'Hello'
-		 *
-		 * @returns
-		 */
-		hello: () => "Hello Moleculer",
+    /**
+    * Say a 'Hello'
+    *
+    * @returns
+    */
+    hello: () => 'Hello Moleculer',
 
-		/**
-		 * Welcome a username
-		 *
-		 * @param {String} name - User name
-		 */
-		welcome: {
-			params: {
-				name: "string",
-			},
-			handler: ctx => `Welcome, ${ctx.params.name}`,
-		},
-	},
+    /**
+    * Welcome a username
+    *
+    * @param {String} name - User name
+    */
+    welcome: {
+      params: {
+        name: 'string'
+      },
+      handler: ctx => `Welcome, ${ctx.params.name as string}`
+    }
+  },
 
-	/**
-	 * Events
-	 */
-	events: {
+  /**
+  * Events
+  */
+  events: {
 
-	},
+  },
 
-	/**
-	 * Methods
-	 */
-	methods: {
+  /**
+  * Methods
+  */
+  methods: {
 
-	},
-};
+  }
+}
 
 export = GreeterService;
